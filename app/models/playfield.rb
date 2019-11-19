@@ -1,0 +1,2 @@
+class Playfield < ApplicationRecord
+end

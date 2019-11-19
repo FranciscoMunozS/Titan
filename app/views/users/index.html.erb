@@ -25,7 +25,10 @@
         <% @users.each do |user| %>
           <tr>
             <td><%= user.email %></td>
-            <% if user.has_role? :admin %>
+
+            <% if user.has_role? :superadmin %>
+              <td><span class="btn btn-outline-danger btn-sm">Superadministrador</span></td>
+            <% elsif user.has_role? :admin %>
               <td><span class="btn btn-outline-primary btn-sm">Administrador</span></td>
             <% elsif user.has_role? :editor %>
               <td><span class="btn btn-outline-success btn-sm">Editor</span></td>
@@ -35,7 +38,7 @@
             <td>
               <%= link_to 'Ver', user, class: 'btn btn-primary btn-sm' %>
               <%= link_to 'Editar', edit_user_path(user), class: 'btn btn-success btn-sm' %>
-              <%= link_to 'Eliminar', users_path, method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-danger' %>
+              <%= link_to 'Eliminar', user_path(user), method: :delete, data: { confirm: 'Esta seguro?' }, class: 'btn btn-sm btn-danger' %>
             </td>
           </tr>
         <% end %>

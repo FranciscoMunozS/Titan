@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @playfield.name %>
+</p>
+
+<p>
+  <strong>Dimensions:</strong>
+  <%= @playfield.dimensions %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @playfield.type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @playfield.description %>
+</p>
+
+<%= link_to 'Edit', edit_playfield_path(@playfield) %> |
+<%= link_to 'Back', playfields_path %>
